@@ -15,12 +15,6 @@ auth_password = ""
 auth_build = 12345
 auth_agent = "WebManager"
 
-# requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
-# session = requests.Session()
-# adapter = requests.adapters.HTTPAdapter(pool_connections=1, pool_maxsize=1)
-# session.mount('https://', adapter)
-
 class MetaTraderAPI():
 
     def __init__(self) -> None:
@@ -68,9 +62,7 @@ class MetaTraderAPI():
             second_auth_url, second_auth_params).json()
 
 
-    # THis works
     def process_auth(self, answer, password: str):
-        # transcoded = password.encode('utf-8').decode('utf_16_le')
         pass_md5 = md5(password.encode('utf_16_le'))
         pass_md5_digest = pass_md5.digest()
 
